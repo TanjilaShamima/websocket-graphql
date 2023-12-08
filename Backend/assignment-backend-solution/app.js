@@ -61,7 +61,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    'mongodb+srv://maximilian:9u4biljMQc4jjqbe@cluster0-ntrwp.mongodb.net/messages?retryWrites=true'
+    'mongodb+srv://tanjila:Tanjila-829@cluster0.dgxbfbv.mongodb.net/websocket-graphql'
   )
   .then(result => {
     app.listen(8080);
