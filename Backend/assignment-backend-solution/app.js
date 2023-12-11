@@ -64,6 +64,14 @@ mongoose
     'mongodb+srv://tanjila:Tanjila-829@cluster0.dgxbfbv.mongodb.net/websocket-graphql'
   )
   .then(result => {
-    app.listen(8080);
+    const server = app.listen(8080);
+    const io = require('./socket').init(server,{
+      cors: {
+        origin: '*'
+      }
+    });
+    io.on('connection', socket => {
+      console.log('Client connection established');
+    })
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log("error: ", err));
